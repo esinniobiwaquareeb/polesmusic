@@ -1,0 +1,38 @@
+
+<ion-view view-title="Music">
+<div class="tabs">
+      <a class="tab-item active" href="#">
+        Poles Music
+      </a>
+      <a class="tab-item" href="#">
+        Media Library
+      </a>
+    </div>
+      
+  <ion-content overflow-scroll="true" ng-class="hasFooter()">
+   <div class="list">
+
+        <div ng-repeat="item in filtered">
+          <div ng-if="(item.title.label | limitTo: 1) != ( filtered[$index - 1].title.label | limitTo: 1 )" class="item item-divider">
+            {{item.title.label | limitTo: 1}}
+          </div>
+
+          <a href="#/tab/music"
+             class="item item-avatar img-square" ng-click="setAudio($index, {{item.id.attributes['im:id']}})">
+            <img ng-src="{{ item['im:image'][2].label }}"> 
+            <h2>{{ (item.title.label).slice(0, (item.title.label).indexOf("-") ) }}</h2>
+            <h4>{{ item['im:artist'].label }}</h4> 
+          </a>
+
+        </div>
+      </div>
+  </ion-content>
+
+  <div class="music-footer" ng-if="musicPlaying" ng-click="openModal()">
+
+    <span class="track">{{currentTrackDetails.trackName}}</span>
+    <span class="artist">{{currentTrackDetails.artistName}}</span>
+
+  </div>
+
+</ion-view>

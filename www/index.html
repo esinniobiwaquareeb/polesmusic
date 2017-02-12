@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Poles Music App</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>poles</title>
+
+   
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/angular-moment/angular-moment.js"></script>
+    <script src="lib/angular-soundmanager2/dist/angular-soundmanager2.js"></script>
+    <script src="lib/collide.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
+</head>
+  <body ng-app="musicapp" animation="slide-left-right-ios7">
+
+
+    <ion-nav-view></ion-nav-view>
+
+
+    <script id="intro.html" type="text/ng-template"> 
+      <ion-view left-buttons="leftButtons" right-buttons="rightButtons">
+        <ion-content padding="true" style="background: url(img/bg.jpg) center; background-size: cover;">
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+          <ion-slide>
+            <h2 style="color: #fff">Thank you for choosing Poles Music!</h2>
+
+            <h3 style="margin-top:150px; color: #fff">
+              We've worked super hard to make you happy.
+            </h3>
+           
+          </ion-slide>
+
+
+          <ion-slide>
+            <h3 style="color: white">With Poles</h3>
+            
+            <div id="list">
+              <h4 style="color: white;" >You can:</h4>
+              <ul>
+                <li><i class="ion-music-note"></i> Stream Musics</li>
+                <li><i class="ion-archive"></i> Download Musics</li>
+                <li><i class="ion-card"></i> Almost at NO fee</li>
+              </ul>
+            </div>
+          </ion-slide>
+
+          <ion-slide>
+          <i class="ion-ios-musical-notes" style="font-size: 90px;"></i>
+           <div id="list">
+              <h4 style="color: white">Just 3 Steps</h4>
+              <ol>
+                <li>Create a one-time account</li>
+                <li>Find your favourite songs</li>
+                <li>Stream on the GO</li>
+                   <a href="#/tab" class="button button-positive">Start Poles Music</a>
+              </ol>
+            </div>
+          </ion-slide>
+
+        </ion-slide-box>
+
+        </ion-content>
+      </ion-view>
+    </script>
+  
+ <script id="main.html" type="text/ng-template">
+      <ion-view left-buttons="leftButtons" right-buttons="rightButtons" hide-back-button="true" title="'Awesome'">
+        <ion-content padding="true" has-header="true">
+          <h1>Main app here</h1>
+          <button class="button" ng-click="toIntro()">Do Tutorial Again</button>
+        </ion-content>
+      </ion-view>
+    </script>
+
+  
+  </body>
+</html>
+  
+
+</body>
+</html>

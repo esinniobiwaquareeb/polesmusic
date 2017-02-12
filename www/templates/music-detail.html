@@ -1,0 +1,39 @@
+<ion-view class="bubble-background">
+ <ion-nav-title>{{album.artistName}} - {{album.collectionName}}</ion-nav-title>
+  <ion-content overflow-scroll="true" class="music-detail img-square" ng-class="hasFooter()">
+	<div class="padding">
+	    <figure class="square" style="background-image:url('{{ album.artworkUrl100.replace('100x100', '600x600') }}')"></figure>
+    </div>
+    <div class="padding">
+	    <h4>{{album.collectionName}}</h4>
+		<p>{{album.artistName}}</p>
+	</div>
+
+    <ul class="list track-list">
+	    <li ng-repeat="track in tracks" class="item" ng-if="track.trackName" ng-click="lookup(track.trackId, track.previewUrl, $index)">
+	    	<span ng-if="track.previewUrl" class="active">
+		    	<span class="track-number">{{$index + 1}}</span>
+		    	{{track.trackName}}
+		    	<span class="item-note">
+			      {{track.trackTimeMillis | amDateFormat:'m:ss'}}
+			    </span>
+		    </span>
+		    <span ng-if="!track.previewUrl">
+		    	<span class="track-number">{{$index}}</span>
+		    	{{track.trackName}}
+		    	<span class="item-note">
+			      {{track.trackTimeMillis | amDateFormat:'m:ss'}}
+			    </span>
+		    </span>
+	    </li>
+	</ul>
+  </ion-content>
+
+  <div class="music-footer" ng-if="musicPlaying" ng-click="openModal()">
+
+    <span class="track">{{currentTrackDetails.trackName}}</span>
+    <span class="artist">{{currentTrackDetails.artistName}}</span>
+
+  </div>
+  
+</ion-view>

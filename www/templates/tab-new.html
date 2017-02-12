@@ -1,0 +1,61 @@
+<ion-view view-title="Discover">
+
+
+  <ion-content overflow-scroll="true" ng-class="hasFooter()">
+   <!--     <section class="featured" style="background-image:url('data:image/png;base64,{{featured[0]}}')"></section>
+-->
+
+        <section class="padding">
+          <h4 align="center">New Albums</h4>
+
+          <div class="wide-as-needed">  
+              <a ng-repeat="item in topAlbums" href="#/tab/new/album/{{item.id.attributes['im:id']}}"
+               class="item-grid img-square">
+
+              <img ng-src="{{ item['im:image'][2].label }}">
+              <h5 class="ellipsed">{{ (item.title.label).slice(0, (item.title.label).indexOf("-") ) }}</h5>
+              <p class="ellipsed">{{ item['im:artist'].label }}</p>
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <hr> 
+       </section>
+
+
+        <section class="padding">
+          <h4 align="center">Top Albums</h4>
+
+          <div class="wide-as-needed">  
+              <a ng-repeat="item in topAlbums" href="#/tab/new/album/{{item.id.attributes['im:id']}}"
+               class="item-grid img-square">
+
+              <img ng-src="{{ item['im:image'][2].label }}">
+              <h5 class="ellipsed">{{ (item.title.label).slice(0, (item.title.label).indexOf("-") ) }}</h5>
+              <p class="ellipsed">{{ item['im:artist'].label }}</p>
+            </a>
+          </div>
+        </section>
+
+<!--
+        <section class="subfeature padding">
+            <div class="wide-as-needed"> 
+              <figure style="background-image:url('data:image/png;base64,{{featured[1]}}')"></figure>
+              <figure style="background-image:url('data:image/png;base64,{{featured[2]}}')"></figure>
+              <figure style="background-image:url('data:image/png;base64,{{featured[0]}}')"></figure>
+            </div>
+
+        </section>
+-->
+        
+  </ion-content>
+
+  <div class="music-footer" ng-if="musicPlaying" ng-click="openModal()">
+
+    <span class="track">{{currentTrackDetails.trackName}}</span>
+    <span class="artist">{{currentTrackDetails.artistName}}</span>
+
+  </div>
+
+</ion-view>

@@ -1,0 +1,253 @@
+/* Music App */
+
+
+.background, .background .pane, .background .item, .background .item-complex .item-content{
+    background-color: #f7f8fa;
+}
+
+
+.ellipsed {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Music Section */
+
+.img-square img{
+	border-radius: 3px !important;
+}
+
+/* Music Player */
+
+.music-detail{
+	text-align: center;
+}
+
+
+.music-detail img{
+	width: 100%;
+}
+
+.music-detail h4{
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.music-detail figure{
+	background-size: cover;
+	border-radius: 3px;
+	background-color: #f8f8f8;
+}
+
+.music-controls{
+	position: fixed;
+	bottom: 105px;
+
+	left:0px;
+	right:0px;
+}
+
+
+.music-controls .icon{
+	font-size: 30px;
+	width: 15%;
+	display: inline-block;
+}
+
+.music-controls .icon:active{
+	color:#666;
+}
+
+.music-range{
+	position: fixed;
+	bottom: 0px !important;
+	left:0;
+	right: 0;
+}
+
+.square{
+	width: 100%;
+}
+
+.square:before{
+	content: '';
+	padding-top: 100%;
+	display: block;
+}
+
+/* New Section */
+
+.featured{
+	width: 100%;
+	background-color: #ccc;
+	background-size: cover;
+}
+
+.featured:before{
+	content: '';
+	padding-top: 50%;
+	display: block;
+}
+
+.wide-as-needed {
+  white-space: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.item-grid{
+	display: inline-block;
+	width: 27%;
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.item-grid img{
+	width: 100%;
+}
+
+a.item-grid {
+    color: inherit;
+    text-decoration: none;
+}
+
+.item-grid h5{
+	font-size: 12px;
+	margin-bottom: 0;
+}
+
+.item-grid p{
+	font-size: 12px;
+}
+
+.subfeature figure{
+	display: inline-block;
+	width: 60%;
+	background-color: #ccc;
+	background-size: cover;
+	margin-right: 6px;
+	border-radius: 3px;
+}
+
+.subfeature figure:before{
+	content: '';
+	padding-top: 50%;
+	display: block;
+}
+
+/* Album Detail */
+
+.track-list{
+	text-align: left;
+}
+
+.track-number{
+	display: inline-block;
+	margin-right: 20px;
+	width: 10px;
+}
+
+.track-list .item{
+	padding-right: 80px;
+	font-size: 14px;
+}
+
+.track-list .item-note{
+	position: absolute;
+	right:10px;
+}
+
+
+.track-list .item .active{
+	font-weight: 900;
+}
+
+.track-list .item .active .item-note{
+	font-weight: normal;
+}
+
+/* Music Footer */
+
+.music-footer{
+	position: fixed;
+	bottom: 47px;
+	left:0;
+	right: 0;
+	text-align: center;
+	height: 46px;
+	border-top:1px solid #b2b2b2;
+	background-color: #f8f8f8;
+	cursor: pointer;
+}
+
+.platform-android .music-footer{
+	position: fixed;
+	bottom: 0 !important;
+	left:0;
+	right: 0;
+	text-align: center;
+	height: 46px;
+	border-top:1px solid #b2b2b2;
+	background-color: #f8f8f8;
+	cursor: pointer;
+}
+
+.music-footer .track, .music-footer .artist{
+	float: left;
+	width: 100%;
+	margin: 0px;
+	font-size: 12px;
+}
+
+.music-footer .track{
+	margin-top: 3px;
+	font-weight: bold;
+}
+
+.music-footer .artist{
+	margin-top: -3px;
+}
+.item-content{
+	background-color: green;
+}
+
+body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+.slider {
+  height: 100%;
+}
+.slider-slide {
+  padding-top: 80px;
+  color: #fff;
+  text-align: center;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+#logo {
+  margin: 10px 0px;
+
+}
+
+#list {
+  width: 200px;
+  margin: 50px auto;
+  font-size: 20px;
+}
+#list ol {
+  margin-top: 30px;
+}
+#list ol li {
+  text-align: left;
+  list-style: decimal;
+  margin: 10px 0px;
+}
+
+#list ul li {
+  text-align: left;
+  
+  margin: 10px 0px;
+}

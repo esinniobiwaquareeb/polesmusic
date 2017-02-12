@@ -1,0 +1,42 @@
+<ion-view view-title="Search">
+<br>
+<br>
+<br>
+<br>
+<br>
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <form ng-submit="hideKeyboard()" >
+                <input type="search" id="search-input" placeholder="Search" ng-model="search">
+                </form>
+            </label>
+            <button class="button button-clear" ng-click="cancel()">
+                Cancel
+            </button>
+        </div>
+
+
+
+    <ion-content has-bouncing="true" class="has-header">
+
+        <div class="list">
+            <div class="item item-song two-lines" collection-repeat="title in titles" ng-click="playTitle(title)">
+                <img  ng-src="{{miniaturesPath}}{{title.artwork}}" />
+                <h2>{{title.name}}</h2>
+                <p>{{title.artist}}</p>
+                <button class="button button-icon ion-more" ng-click="showPopover($event,title)"></button>
+            </div>
+        </div>
+
+    </ion-content>
+
+    <div class="music-footer" ng-if="musicPlaying" ng-click="openModal()">
+
+    <span class="track">{{currentTrackDetails.trackName}}</span>
+    <span class="artist">{{currentTrackDetails.artistName}}</span>
+
+  </div>
+
+</ion-view>
+

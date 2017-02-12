@@ -1,0 +1,58 @@
+<ion-view ng-controller="MusicDetailCtrl" view-title="Music Player">
+ <ion-header-bar>
+  <div class="buttons">
+    <button class="button button-clear" ng-click="closeModal()"><i class="ion-chevron-down"></i></button>
+  </div>
+  <h1 class="title">#</h1>
+  <div class="buttons">
+    <button class="button button-clear"><i class="ion-more"></i></button>
+  </div>
+
+    </ion-header-bar>
+  <ion-content overflow-scroll="true" class="music-detail img-square">
+
+	  <ion-slide-box ng-if="!musicPlayer.album && musicPlayer.playlist" on-slide-changed="slideHasChanged($index)" show-pager="false" does-continue="true" active-slide="activeSlide">
+		  <ion-slide ng-repeat="track in musicPlayer.playlist" class="padding">
+		    <figure class="square" style="background-image:url('#')"></figure>
+		  </ion-slide>
+	  </ion-slide-box>
+
+	  <ion-slide-box ng-if="musicPlayer.album && musicPlayer.playlist" on-slide-changed="slideHasChanged($index)" show-pager="false" does-continue="true" active-slide="activeSlide">
+		  <ion-slide ng-repeat="track in musicPlayer.playlist" class="padding">
+		    <figure class="square" style="background-image:url('#')"></figure>
+		  </ion-slide>
+	  </ion-slide-box>
+
+	  <!-- <figure class="square" style="background-image:url('{{ track.artworkUrl100.replace('100x100', '600x600') }}')"></figure> -->
+
+	<div class="padding">
+	  <h4 ng-if="track.trackName" class="ellipsed">#</h4>
+	  <p ng-if="track.artistName" class="ellipsed">#</p>
+    </div>
+
+
+    <div class="music-controls">
+		<i class="icon ion-refresh" ng-click="repeatMusic()"></i>    
+    	<i class="icon ion-skip-backward" ng-click="prevTrack()"></i>
+		<i ng-if="!musicPlaying" class="icon ion-play" ng-click="playPause()"></i>
+		<i ng-if="musicPlaying" class="icon ion-pause" ng-click="playPause()"></i>
+		<i class="icon ion-skip-forward" ng-click="nextTrack()"></i>
+		<i class="icon ion-shuffle" ng-click="#"></i>
+
+
+	</div>
+  
+
+
+
+  </ion-content>
+  
+  <div class="item range music-range">
+	  <span ng-if="musicPlayer.trackPosition">#</span>
+	  <span ng-if="!musicPlayer.trackPosition">0:00</span>
+	  <input type="range" name="scrub" max="100" ng-model="musicPlayer.trackRange" ng-change="setPosition(musicPlayer.trackRange)">
+	  <span ng-if="musicPlayer.trackDuration">#</span>
+	  <span ng-if="!musicPlayer.trackDuration">0:30</span>
+	</div>
+
+</ion-view>
